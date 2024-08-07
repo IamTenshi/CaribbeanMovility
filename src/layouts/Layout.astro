@@ -1,0 +1,38 @@
+---
+import SEO from "../components/SEO.astro"
+
+interface Props {
+	title: string
+	description: string
+	canonical?: string
+	image?: string
+}
+
+const { title, description, canonical, image } = Astro.props
+---
+
+<!doctype html>
+<html lang="es" class="overflow-x-hidden">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<SEO
+			canonical={canonical}
+			description={description}
+			image={image}
+			title={title}
+		/>
+	</head>
+	<body class="overflow-x-hidden">
+		<slot />
+		<style is:global>
+			html {
+				scroll-behavior: smooth;
+			}
+		</style>
+	</body>
+</html>
