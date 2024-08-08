@@ -1,3 +1,29 @@
-<section>
-  
+---
+import { Image } from 'astro:assets';
+import image from '../../public/images/target-audience-img.png';
+import checkIcon from '../../public/icons/check.svg';
+---
+
+<section class="flex flex-col lg:flex-row gap-x-16">
+  <div class="lg:w-1/2">
+    <Image src={image} alt="Ilustración" />
+  </div>
+  <div class="flex flex-col py-4 lg:w-1/2 gap-y-5">
+    <h2 class="text-3xl italic font-black font-roboto">¿A quién va dirigido?</h2>
+    <p class="text-lg leading-tight">Las charlas serán dirigidas desde 3 perspectivas diferentes: <strong class="font-semibold">Mercado, Ventas y Futuro de la Movilidad Eléctrica.</strong></p>
+    <ul class="flex flex-col text-lg leading-none gap-y-3">
+      <li class="flex items-center gap-x-1">
+        <Image src={checkIcon} alt="icono" class="self-start" />
+        Vendedores dedicados a vender vehículos eléctricos.
+      </li>
+      <li class="flex items-center gap-x-1">
+        <Image src={checkIcon} alt="icono" class="self-start" />
+        Ejecutivos
+      </li>
+      <li class="flex items-center gap-x-1">
+        <Image src={checkIcon} alt="icono" class="self-start" />
+        Gerentes
+      </li>
+    </ul>
+  </div>
 </section>
