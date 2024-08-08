@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import image1 from '../../public/images/who-we-are-img-1.png';
+import image2 from '../../public/images/who-we-are-img-2.png';
+import image3 from '../../public/images/who-we-are-img-3.png';
+---
+
+<section id="who-we-are" class="flex flex-col items-center gap-10 p-4 px-8 py-24 lg:flex-row justify-evenly bg-downriver">
+  <div class="flex flex-col text-white max-w-96 gap-y-8">
+    <h2 class="text-3xl font-black">¿Quiénes somos?</h2>
+    <div class="flex flex-col text-xl gap-y-4">
+      <p>Somos <strong>el evento mas grande e importante de la Rep. Dom</strong> con todo lo que es la Movilidad Eléctrica. </p>
+      <p>Vamos a hablar y socializar todos los temas de los vehículos eléctricos, desde la perspectiva del mercado, como funciona, hasta cual será el futuro de la movilidad a nivel mundial. </p>
+      <p>Estaremos celebrando un seminario que tocará los principales temas, sin dejar a un lado, como prepararse para este cambio que se aproxima.</p>
+    </div>
+  </div>
+  
+  <div class="flex flex-col gap-3">
+    <div class="flex gap-3">
+      <div>
+        <Image src={image1} alt="Imagen 1"/>
+      </div>
+      <div>
+        <Image src={image2} alt="Imagen 2"/>
+      </div>
+    </div>
+    <div>
+      <Image src={image3} alt="Imagen 3"/>
+    </div>
+  </div>
+</section>

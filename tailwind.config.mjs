@@ -7,6 +7,10 @@ export default {
 				'downriver' : '#0B184F',
 				'malted-mint-madness': '#10E2AA',
 				'bright-sky-blue': '#02C5FB'
+			},
+			screens: {
+				'2xs': '375px',
+				'xs': '425px'
 			}
 		},
 	},
