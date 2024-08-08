@@ -5,6 +5,9 @@ import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import WhoWeAre from '../components/WhoWeAre.astro';
 import Partners from '../components/Partners.astro';
+import Charlists from '../components/Charlists.astro';
+import WhyAssist from '../components/WhyAssist.astro';
+import TargetAudience from '../components/TargetAudience.astro';
 ---
 
 <Layout canonical="" description="Caribbean Movility" image="" title="Caribbean Movility">
@@ -13,6 +16,11 @@ import Partners from '../components/Partners.astro';
 		<Hero />
 		<WhoWeAre />
 		<Partners />
+		<div class="flex flex-col px-8 py-24 text-white bg-downriver md:px-16 lg:px-24">
+			<Charlists />
+			<WhyAssist />
+			<TargetAudience />
+		</div>
 	</main>
   <Footer />
 </Layout>

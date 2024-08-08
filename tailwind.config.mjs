@@ -11,6 +11,9 @@ export default {
 			screens: {
 				'2xs': '375px',
 				'xs': '425px'
+			},
+			fontFamily: {
+				'roboto': ['Roboto', 'sans-serif']
 			}
 		},
 	},
