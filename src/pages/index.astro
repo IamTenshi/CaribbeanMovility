@@ -9,10 +9,13 @@ import Charlists from '../components/Charlists.astro';
 import WhyAssist from '../components/WhyAssist.astro';
 import TargetAudience from '../components/TargetAudience.astro';
 import Booking from '../components/Booking.astro';
+import ParallaxImage from '../components/ParallaxImage.astro';
+import LocationAndDate from '../components/LocationAndDate.astro';
+import parallaxImageUrl from '../../public/images/parallax-img.png';
 ---
 
 <Layout canonical="" description="Caribbean Movility" image="" title="Caribbean Movility">
-	<Header/>
+	<Header />
 	<main>
 		<Hero />
 		<WhoWeAre />
@@ -23,6 +26,8 @@ import Booking from '../components/Booking.astro';
 			<TargetAudience />
 		</div>
 		<Booking />
+		<ParallaxImage imageUrl={parallaxImageUrl.src} />
+		<LocationAndDate />
 	</main>
   <Footer />
 </Layout>
