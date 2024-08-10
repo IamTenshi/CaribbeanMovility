@@ -1,13 +1,29 @@
-<section class="px-8 flex items-center md:px-16 py-16 lg:px-20">
-  <div class="flex flex-col gap-y-12">
+---
+const locationUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.982172734973!2d-69.94899320115618!3d18.478560760970254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8b260ce570d3%3A0xecb7f7c7d7cabacb!2sMetro%20Plaza%20Charles%20Sumner!5e0!3m2!1ses!2sdo!4v1723247302133!5m2!1ses!2sdo';
+const date = '9 de noviembre este 2024';
+const location = 'Ave. Charles Summer, Metro Plaza, #123'
+---
+
+<section class="flex flex-col items-center justify-center px-8 py-16 lg:flex-row gap-x-20 gap-y-10 md:px-16 lg:px-20">
+  <div class="flex flex-col order-2 gap-y-12 lg:order-1">
     <div class="flex flex-col gap-y-2 lg:gap-y-3">
-      <h3 class="font-black font-roboto italic text-2xl lg:text-3xl text-bright-sky-blue">Fecha</h3>
-      <p class="text-xl lg:text-2xl">9 de noviembre este 2024</p>
+      <h3 class="text-2xl italic font-black font-roboto lg:text-3xl text-bright-sky-blue">Fecha</h3>
+      <time datetime="2024-11-09" class="text-xl lg:text-2xl">{date}</time>
     </div>
     <div class="flex flex-col gap-y-2 lg:gap-y-3">
-      <h3 class="font-black font-roboto italic text-2xl lg:text-3xl text-bright-sky-blue">Ubicación</h3>
-      <p class="text-xl lg:text-2xl">Ave. Charles Summer, Metro Plaza, #123</p>
+      <h3 class="text-2xl italic font-black font-roboto lg:text-3xl text-bright-sky-blue">Ubicación</h3>
+      <span class="text-xl lg:text-2xl">{location}</span>
     </div>
   </div>
-  <div id="map"></div>
+  <div id="map" class="order-1 lg:order-2 w-full max-w-[30rem] aspect-[48/35]">
+    <iframe 
+      title="Ubicación"
+      src={locationUrl}
+      height="350"
+      class="w-full h-full border-0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 </section>
