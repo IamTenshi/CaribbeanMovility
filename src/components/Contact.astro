@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import emailSvg from '../../public/icons/email.svg';
+import phoneSvg from '../../public/icons/phone.svg';
+
+interface ContactInfo {
+  email: string;
+  phone: string;
+}
+
+const contact: ContactInfo = {
+  email: 'paulmanzueta@gmail.com',
+  phone: '+1 829-771-3132'
+}
+---
+
+<section id="contact" class="bg-downriver flex px-16 py-14 text-white">
+  <div class="lg:w-1/2 flex flex-col gap-y-8">
+    <h3 class="font-roboto font-black italic text-3xl">Ponte en contacto</h3>
+    <p class="text-xl">
+      Proin volutpat consequat porttitor cras nullam gravida at. Orci molesta a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.
+    </p>
+    <address class="flex flex-col gap-y-2 text-lg">
+      <span class="leading-none">Paúl Manzueta</span>
+      <a href={`mailto:${contact.email}`} class="flex items-center gap-x-1.5 leading-none">
+        <Image src={emailSvg} alt="email icon" class="size-5"/>
+        <span>{contact.email}</span>
+      </a>
+      <a href={`tel:${contact.phone}`} class="flex items-center gap-x-1.5 leading-none">
+        <Image src={phoneSvg} alt="phone icon" class="size-5"/>
+        <span>{contact.phone}</span>
+      </a>
+    </address>
+  </div>
+  <div class="lg:w-1/2">
+
+  </div>
+</section>
