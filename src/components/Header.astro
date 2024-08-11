@@ -4,21 +4,23 @@ import logo from '../../public/logo.svg'
 import hamburger from '../../public/icons/bars-3.svg'
 ---
 
-<header class="flex w-full items-center h-[4.25rem] justify-between px-8 py-2 text-white bg-downriver">
-  <a href="/">
-    <Image src={logo} alt="Caribbean Movility logo"/>
-  </a>
-  <button class="lg:hidden" aria-label="Activar navegación">
-    <Image src={hamburger} alt="Abrir menú"/>
-  </button>
-  <nav class="absolute right-0 flex-col p-10 lg:p-0 hidden top-[4.25rem] lg:top-auto bg-downriver lg:static gap-x-8 gap-y-4 lg:flex lg:flex-row">
-    <a href="/">Inicio</a>
-    <a href="#who-we-are">Quiénes somos</a>
-    <a href="#partners">Patrocinadores</a>
-    <a href="#charlists">Charlistas</a>
-    <a href="#how-to-arrive">Como llegar</a>
-    <a href="#contact">Contacto</a>
-  </nav>
+<header class="flex w-full items-center h-[4.25rem] justify-center py-2 px-8 text-white bg-downriver">
+  <div class="flex items-center justify-between w-full h-full lg:max-w-7xl">
+    <a href="/">
+      <Image src={logo} alt="Caribbean Movility logo"/>
+    </a>
+    <button class="lg:hidden" aria-label="Activar navegación">
+      <Image src={hamburger} alt="Abrir menú"/>
+    </button>
+    <nav class="absolute right-0 flex-col p-10 lg:p-0 hidden top-[4.25rem] lg:top-auto bg-downriver lg:static gap-x-8 gap-y-4 lg:flex lg:flex-row">
+      <a href="/">Inicio</a>
+      <a href="#who-we-are">Quiénes somos</a>
+      <a href="#partners">Patrocinadores</a>
+      <a href="#charlists">Charlistas</a>
+      <a href="#how-to-arrive">Como llegar</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </div>
 </header>
 
 <script>
