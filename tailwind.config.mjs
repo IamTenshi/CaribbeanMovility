@@ -14,6 +14,9 @@ export default {
 			},
 			fontFamily: {
 				'roboto': ['Roboto', 'sans-serif']
+			},
+			gap: {
+				'15': '3.75rem'
 			}
 		},
 	},
