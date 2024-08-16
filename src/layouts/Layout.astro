@@ -36,6 +36,9 @@ const { title, description, canonical, image } = Astro.props
 			html {
 				scroll-behavior: smooth;
 			}
+			* {
+				font-family: Roboto;
+			}
 			.text-sky-malted {
 				background: linear-gradient(90deg, rgba(16,226,170,1) 24%, rgba(0,200,251,1) 76%);
 				-webkit-background-clip: text;
@@ -139,8 +142,8 @@ const { title, description, canonical, image } = Astro.props
 			}
 
 			@font-face {
-				font-family: "League Gothic", sans-serif;
-				src: url('/fonts/League_Gothic/LeagueGothic-Regular-VariableFont_wdth.ttf') format('truetype');
+				font-family: 'LeagueGothic', sans-serif;
+				src: url('/fonts/League_Gothic/league-gothic.regular.ttf') format('truetype');
 				font-optical-sizing: auto;
 				font-weight: 400;
 				font-style: normal;
