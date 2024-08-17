@@ -15,7 +15,7 @@ import parallaxImageUrl from '../../public/images/parallax-img.png';
 import ContactSection from '../components/ContactSection.astro';
 
 import { Image } from 'astro:assets';
-import wave from '../../public/patters/wave-pattern-2.svg';
+import background from '../../public/images/why-assist-bg.png';
 ---
 
 <Layout canonical="" description="Caribbean Mobility" image="/logo.svg" title="Caribbean Mobility">
@@ -25,7 +25,7 @@ import wave from '../../public/patters/wave-pattern-2.svg';
 		<WhoWeAre />
 		<Partners />
 		<div class="flex flex-col relative px-8 py-24 text-white gap-y-16 bg-downriver md:px-16 lg:px-24">
-			<Image src={wave} alt="patron de ondas" class="absolute inset-0 object-cover w-full h-full"/>
+			<Image src={background} alt="patron de ondas" class="absolute inset-0 object-cover w-full h-full"/>
 			<WhyAssist />
 			<TargetAudience />
 		</div>
