@@ -1,19 +1,19 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../../public/logo.svg";
-import { contact } from "../components/ContactSection.astro";
+import { Image } from 'astro:assets';
+import logo from '../../public/logo.svg';
+import { contact } from '../components/ContactSection.astro';
 
-const addressLink = "https://www.google.com/maps/place/Metro+Plaza+Charles+Sumner/@18.478552,-69.949178,18z/data=!4m14!1m7!3m6!1s0x8eaf8b260ce570d3:0xecb7f7c7d7cabacb!2sMetro+Plaza+Charles+Sumner!8m2!3d18.4784807!4d-69.9491995!16s%2Fg%2F11sh4l3b9r!3m5!1s0x8eaf8b260ce570d3:0xecb7f7c7d7cabacb!8m2!3d18.4784807!4d-69.9491995!16s%2Fg%2F11sh4l3b9r?entry=ttu";
+const addressLink = 'https://www.google.com/maps/place/Sheraton+Santo+Domingo+Hotel/@18.463163,-69.898036,16z/data=!4m9!3m8!1s0x8ea5623b60461339:0x6a3ba437697226a4!5m2!4m1!1i2!8m2!3d18.4631626!4d-69.8980362!16s%2Fg%2F1q5bmclch?hl=es&entry=ttu';
 ---
 
 <footer class="flex flex-col items-center text-white bg-black p-14">
   <div class="flex justify-center w-full max-w-7xl">
     <div class="grid w-full gap-y-10 gap-x-15">
-      <div class="">
+      <div>
         <Image src={logo} alt="Logo" class="w-full max-w-40" />
       </div>
       <div class="flex flex-col gap-3">
-        <h4 class="text-lg italic font-extrabold ">Secciones</h4>
+        <h4 class="text-lg italic font-extrabold">Secciones</h4>
         <ul class="flex flex-col text-lg gap-y-2">
           <li><a href="/">Inicio</a></li>
           <li><a href="#who-we-are">Quiénes somos</a></li>
@@ -25,7 +25,7 @@ const addressLink = "https://www.google.com/maps/place/Metro+Plaza+Charles+Sumne
         </ul>
       </div>
       <div class="flex flex-col gap-3">
-        <h4 class="text-lg italic font-extrabold ">Contáctanos</h4>
+        <h4 class="text-lg italic font-extrabold">Contáctanos</h4>
         <ul class="flex flex-col text-lg gap-y-2">
           <li>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
@@ -36,10 +36,10 @@ const addressLink = "https://www.google.com/maps/place/Metro+Plaza+Charles+Sumne
         </ul>
       </div>
       <div class="flex flex-col gap-3">
-        <h4 class="text-lg italic font-extrabold ">Ubicación</h4>
+        <h4 class="text-lg italic font-extrabold">Ubicación</h4>
         <ul class="flex flex-col text-lg gap-y-2">
           <li>
-            <a href={addressLink}>Ave. Charles Summer, Metro Plaza, #123</a>
+            <a href={addressLink}>Sheraton Santo Domingo Hotel</a>
           </li>
         </ul>
       </div>
