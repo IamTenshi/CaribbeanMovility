@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import closeTimerSvg from '../../public/icons/x-mark.svg'; 
+---
+
+<div id="timer-element" class="relative bottom-0 z-50 w-full px-10 py-5 overflow-hidden text-white transition-opacity opacity-100 bg-malted-mint-madness">
+  <div class="flex w-full overflow-auto text-center scrollbar-hidden justify-evenly gap-x-20 max-w-7xl">
+    <div class="flex flex-col items-center">
+      <span id="days" class="text-5xl font-bold">0</span>
+      <span>Días</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span id="hours" class="text-5xl font-bold">0</span>
+      <span>Horas</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span id="minutes" class="text-5xl font-bold">0</span>
+      <span>Minutos</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span id="seconds" class="text-5xl font-bold">0</span>
+      <span>Segundos</span>
+    </div>
+  </div>
+  <button id="close-timer" class="absolute right-4 top-4">
+    <Image src={closeTimerSvg} alt="Cerrar temporizador" />
+  </button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const closeButton = document.getElementById('close-timer') as HTMLButtonElement;
+    const timerElement = document.getElementById('timer-element') as HTMLDivElement;
+
+    closeButton.addEventListener('click', () => {
+      timerElement.classList.toggle('opacity-100');
+      timerElement.classList.toggle('opacity-0');
+      setTimeout(() => {
+        timerElement.classList.toggle('hidden');
+      }, 200);
+    });
+
+    const daysElement = document.getElementById('days') as HTMLSpanElement;
+    const hoursElement = document.getElementById('hours') as HTMLSpanElement;
+    const minutesElement = document.getElementById('minutes') as HTMLSpanElement;
+    const secondsElement = document.getElementById('seconds') as HTMLSpanElement;
+
+    const targetDate = new Date('2024-11-23T00:00:00').getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const timeRemaining = targetDate - now;
+
+      if (timeRemaining >= 0) {
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        daysElement.textContent = days.toString();
+        hoursElement.textContent = hours.toString();
+        minutesElement.textContent = minutes.toString();
+        secondsElement.textContent = seconds.toString();
+      } else {
+        clearInterval(timerInterval);
+        timerElement.classList.add('hidden');
+      }
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          timerElement.classList.toggle('relative');
+          timerElement.classList.toggle('fixed');
+        }
+      });
+    }, {
+      threshold: 1
+    });
+
+    observer.observe(timerElement);
+  });
+</script>
