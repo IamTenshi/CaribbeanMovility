@@ -2,14 +2,14 @@
 import Charlist from '../components/Charlist.astro';
 import { Image } from 'astro:assets';
 
-import charlistImage1 from '../../public/images/charlist-1.png';
-import charlistImage2 from '../../public/images/charlist-2.png';
-import charlistImage3 from '../../public/images/charlist-3.png';
-import charlistImage4 from '../../public/images/charlist-4.png';
-import charlistImage5 from '../../public/images/charlist-5.png';
-import charlistImage6 from '../../public/images/charlist-6.png';
+import charlistImage1 from '../../public/images/charlists/charlist-1.png';
+import charlistImage2 from '../../public/images/charlists/charlist-2.png';
+import charlistImage3 from '../../public/images/charlists/charlist-3.png';
+import charlistImage4 from '../../public/images/charlists/charlist-4.png';
+import charlistImage5 from '../../public/images/charlists/charlist-5.png';
+import charlistImage6 from '../../public/images/charlists/charlist-6.png';
 
-import background from '../../public/images/charlists-bg.png';
+import background from '../../public/images/charlists/charlists-bg.png';
 
 const charlists = [
   {
@@ -38,9 +38,9 @@ const charlists = [
   },
   {
     image: charlistImage5,
-    name: 'Antonio Almonte',
+    name: 'Joel Adrián Santos Echavarría',
     title: 'Ministro de Energía y Minas de la República Dominicana',
-    description: 'Encargado del desarrollo de los sectores energético y minero de República Dominicana, manteniendo una infraestructura energética confiable y explotación adecuada de minerales.'
+    description: 'Es licenciado en Economía por la PUCMM y tiene un MBA en Negocios Internacionales de Thunderbird, Arizona, obtenido con una beca Fulbright. Desde 2007, es Vicepresidente Ejecutivo y socio-fundador de Coral Hospitality Corp.'
   },
   {
     image: charlistImage6,
@@ -52,8 +52,8 @@ const charlists = [
 ---
 
 <section id="charlists" class="flex relative flex-col items-center p-8 bg-downriver text-white gap-y-10">
-  <Image src={background} alt="patron de ondas" class="absolute inset-0 object-cover w-full h-full opacity-35"/>
-  <h2 class="text-3xl italic font-black text-center  z-10">Conoce a nuestros charlistas</h2>
+  <Image src={background} alt="patron de ondas" class="absolute inset-0 object-cover w-full h-full opacity-90"/>
+  <h2 class="text-3xl italic font-black text-center z-10">Conoce a nuestros charlistas</h2>
   <div class="grid w-full gap-15 md:grid-cols-2 max-w-7xl z-10">
     {charlists.map((charlist) => (
       <Charlist
