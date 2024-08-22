@@ -9,13 +9,12 @@ import WhyAssist from '../components/WhyAssist.astro';
 import TargetAudience from '../components/TargetAudience.astro';
 import Booking from '../components/Booking.astro';
 import Charlists from '../components/Charlists.astro';
-import ParallaxImage from '../components/ParallaxImage.astro';
+import ImagesCarousel from '../components/ImagesCarousel.astro';
 import LocationAndDate from '../components/LocationAndDate.astro';
 import ContactSection from '../components/ContactSection.astro';
 import Footer from '../components/Footer.astro';
 import Timer from '../components/Timer.astro';
 
-import parallaxImageUrl from '../../public/images/parallax-img.png';
 import background from '../../public/images/why-assist-bg.png';
 
 import { Image } from 'astro:assets';
@@ -36,7 +35,7 @@ import { Image } from 'astro:assets';
 		</div>
 		<Booking />
 		<Charlists />
-		<ParallaxImage imageUrl={parallaxImageUrl.src} />
+		<ImagesCarousel />
 		<LocationAndDate />
 		<ContactSection />
 	</main>
