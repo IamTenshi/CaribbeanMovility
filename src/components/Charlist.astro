@@ -1,25 +1,25 @@
 ---
 import { Image } from "astro:assets";
 
-interface Charlist {
+interface CharlistProps {
   image: ImageMetadata;
   name: string;
   title: string;
   description: string;
 }
 
-const { image, name, title, description } = Astro.props;
+const { image, name, title, description } = Astro.props as CharlistProps;
 ---
 
-<div class="flex flex-col lg:flex-row gap-4">
-  <div class="rounded lg:max-w-40 lg:min-w-40">
-    <Image src={image} alt="Image" class="w-full h-full rounded-xl aspect-[16/20]" />
+<li class="flex flex-col carousel-item bg-black/25 rounded-xl w-80">
+  <div>
+    <Image src={image} alt="Image" class="w-full h-full rounded-t-xl aspect-[16/20]" />
   </div>
-  <div class="flex flex-col gap-y-6 lg:max-w-md">
-    <div class="flex flex-col gap-y-1">
-      <h3 class="text-xl lg:text-base font-semibold">{name}</h3>
+  <div class="flex flex-col items-center flex-1 p-4 gap-y-4">
+    <div>
+      <h3 class="text-xl font-semibold lg:text-base">{name}</h3>
       <h4 class="text-xl lg:text-base">{title}</h4>
     </div>
-    <p class="text-lg lg:text-sm">{description}</p>
+    <button class="px-4 py-1 mt-auto font-semibold transition-colors bg-gray-600 rounded hover:bg-bright-sky-blue w-fit">Ver más</button>
   </div>
-</div>
+</li>
