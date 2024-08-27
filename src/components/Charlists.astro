@@ -1,5 +1,5 @@
 ---
-// import Charlist from '../components/Charlist.astro';
+import Charlist from '../components/Charlist.astro';
 import { Image } from 'astro:assets';
 
 import charlistImage1 from '../../public/images/charlists/charlist-6.png';
@@ -56,18 +56,12 @@ const charlists = [
   <h2 class="z-10 text-3xl italic font-black text-center">Conoce a nuestros charlistas</h2>
   <ul class="z-10 w-full gap-10 carousel max-w-7xl">
     {charlists.map(charlist => (
-      <li class="flex flex-col carousel-item bg-black/25 rounded-xl w-80">
-        <div>
-          <Image src={charlist.image} alt="Image" class="w-full h-full rounded-t-xl aspect-[16/20]" />
-        </div>
-        <div class="flex flex-col items-center flex-1 p-4 gap-y-4">
-          <div>
-            <h3 class="text-xl font-semibold lg:text-base">{charlist.name}</h3>
-            <h4 class="text-xl lg:text-base">{charlist.title}</h4>
-          </div>
-          <button class="px-4 py-1 mt-auto font-semibold transition-colors bg-gray-600 rounded hover:bg-bright-sky-blue w-fit">Ver más</button>
-        </div>
-      </li>
+      <Charlist
+        image={charlist.image}
+        name={charlist.name}
+        title={charlist.title}
+        description={charlist.description}
+      />
     ))}
   </ul>
 </section>

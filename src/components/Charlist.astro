@@ -1,14 +1,14 @@
 ---
 import { Image } from "astro:assets";
 
-interface Charlist {
+interface CharlistProps {
   image: ImageMetadata;
   name: string;
   title: string;
   description: string;
 }
 
-const { image, name, title, description } = Astro.props;
+const { image, name, title, description } = Astro.props as CharlistProps;
 ---
 
 <li class="flex flex-col carousel-item bg-black/25 rounded-xl w-80">
