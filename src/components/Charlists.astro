@@ -1,22 +1,22 @@
 ---
-import Charlist from '../components/Charlist.astro';
+// import Charlist from '../components/Charlist.astro';
 import { Image } from 'astro:assets';
 
-import charlistImage1 from '../../public/images/charlists/charlist-1.png';
+import charlistImage1 from '../../public/images/charlists/charlist-6.png';
 import charlistImage2 from '../../public/images/charlists/charlist-2.png';
 import charlistImage3 from '../../public/images/charlists/charlist-3.png';
 import charlistImage4 from '../../public/images/charlists/charlist-4.png';
 import charlistImage5 from '../../public/images/charlists/charlist-5.png';
-import charlistImage6 from '../../public/images/charlists/charlist-6.png';
+import charlistImage6 from '../../public/images/charlists/charlist-1.png';
 
 import background from '../../public/images/charlists/charlists-bg.png';
 
 const charlists = [
   {
     image: charlistImage1,
-    name: 'Juan Esteban Martínez Ruiz',
-    title: 'Embajador del Transporte Público',
-    description: 'Ingeniero Civil con más de 17 años de experiencia en planeación, gestión y desarrollo de proyectos de transporte e infraestructura, medio ambiente y desarrollo urbano.'
+    name: 'Celso Marranzini',
+    title: 'Ex Vicepresidente de la CODEEE',
+    description: 'Economista y empresario de República Dominicana, ex vicepresidente de la Corporación Dominicana de Empresas Eléctricas Estatales y ex presidente del Consejo Nacional de la Empresa Privada.'
   },
   {
     image: charlistImage2,
@@ -32,7 +32,7 @@ const charlists = [
   },
   {
     image: charlistImage4,
-    name: 'Rolando González Búnster (EVERGO)',
+    name: 'Rolando González Búnster',
     title: 'Presidente de InterEnergy Group',
     description: 'Empresario argentino, fundador y director ejecutivo de InterEnergy Group, con operaciones en República Dominicana, Panamá, Chile, Jamaica y Uruguay.'
   },
@@ -44,24 +44,32 @@ const charlists = [
   },
   {
     image: charlistImage6,
-    name: 'Celso Marranzini',
-    title: 'Ex Vicepresidente de la CODEEE',
-    description: 'Economista y empresario de República Dominicana, ex vicepresidente de la Corporación Dominicana de Empresas Eléctricas Estatales y ex presidente del Consejo Nacional de la Empresa Privada.'
-  }
+    name: 'Juan Esteban Martínez Ruiz',
+    title: 'Embajador del Transporte Público',
+    description: 'Ingeniero Civil con más de 17 años de experiencia en planeación, gestión y desarrollo de proyectos de transporte e infraestructura, medio ambiente y desarrollo urbano.'
+  },
 ];
 ---
 
-<section id="charlists" class="flex relative flex-col items-center p-8 bg-downriver text-white gap-y-10">
+<section id="charlists" class="relative flex flex-col items-center px-8 py-10 text-white bg-downriver gap-y-10 md:px-16 lg:px-24">
   <Image src={background} alt="patron de ondas" class="absolute inset-0 object-cover w-full h-full opacity-90"/>
-  <h2 class="text-3xl italic font-black text-center z-10">Conoce a nuestros charlistas</h2>
-  <div class="grid w-full gap-15 md:grid-cols-2 max-w-7xl z-10">
-    {charlists.map((charlist) => (
-      <Charlist
-        image={charlist.image}
-        name={charlist.name}
-        title={charlist.title}
-        description={charlist.description}
-      />
-    ))}
+  <h2 class="z-10 text-3xl italic font-black text-center">Conoce a nuestros charlistas</h2>
+  <div class="z-10 w-full overflow-x-auto scrollbar-hidden max-w-7xl">
+    <ul class="grid grid-flow-col gap-10 auto-cols-[minmax(20rem,0fr)">
+      {charlists.map(charlist => (
+        <li class="flex flex-col w-80 bg-black/25 rounded-xl">
+          <div class="rounded">
+            <Image src={charlist.image} alt="Image" class="w-full h-full rounded-t-xl aspect-[16/20]" />
+          </div>
+          <div class="flex flex-col items-center flex-1 p-4 gap-y-6">
+            <div class="flex flex-col w-full gap-y-1">
+              <h3 class="text-xl font-semibold lg:text-base">{charlist.name}</h3>
+              <h4 class="text-xl lg:text-base">{charlist.title}</h4>
+            </div>
+            <button class="px-4 py-1 mt-auto transition-colors bg-gray-600 rounded hover:bg-bright-sky-blue w-fit">Ver mas</button>
+          </div>
+        </li>
+      ))}
+    </ul>
   </div>
 </section>
