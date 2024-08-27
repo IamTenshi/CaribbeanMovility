@@ -25,6 +25,7 @@ export default {
 	},
 	plugins: [
 		require('flowbite/plugin'),
+		require('daisyui'),
     function ({ addUtilities }) {
       const newUtilities = {
         '.scrollbar-hidden': {

@@ -11,15 +11,15 @@ interface Charlist {
 const { image, name, title, description } = Astro.props;
 ---
 
-<li class="flex flex-col w-80 bg-black/25 rounded-xl">
-  <div class="rounded">
+<li class="flex flex-col carousel-item bg-black/25 rounded-xl w-80">
+  <div>
     <Image src={image} alt="Image" class="w-full h-full rounded-t-xl aspect-[16/20]" />
   </div>
-  <div class="flex flex-col items-center flex-1 p-4 gap-y-6">
-    <div class="flex flex-col w-full gap-y-1">
+  <div class="flex flex-col items-center flex-1 p-4 gap-y-4">
+    <div>
       <h3 class="text-xl font-semibold lg:text-base">{name}</h3>
       <h4 class="text-xl lg:text-base">{title}</h4>
     </div>
-    <button class="px-4 py-1 mt-auto transition-colors bg-gray-600 rounded hover:bg-bright-sky-blue w-fit">Ver mas</button>
+    <button class="px-4 py-1 mt-auto font-semibold transition-colors bg-gray-600 rounded hover:bg-bright-sky-blue w-fit">Ver más</button>
   </div>
 </li>
