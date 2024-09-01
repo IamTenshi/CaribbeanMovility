@@ -21,5 +21,30 @@ const { image, name, title, description } = Astro.props as CharlistProps;
       <h4 class="text-xl lg:text-base">{title}</h4>
     </div>
     <button class="px-4 py-1 mt-auto font-semibold transition-colors bg-gray-600 rounded hover:bg-bright-sky-blue w-fit">Ver más</button>
+
+    <dialog class="modal">
+      <div class="modal-box rounded-xl">
+        <h3 class="text-lg font-bold">{name}</h3>
+        <p class="py-4">{description}</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Cerrar</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
   </div>
 </li>
+
+<script>
+  const buttons = document.querySelectorAll('.carousel-item button');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.nextElementSibling;
+      if (modal instanceof HTMLDialogElement) {
+        modal.showModal();
+      }
+    })
+  })
+</script>
