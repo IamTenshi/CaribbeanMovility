@@ -31,11 +31,11 @@ const flags: Flag[] = [
 ]
 ---
 
-<div class="flex justify-center p-4 overflow-hidden bg-white">
+<div class="flex justify-center overflow-hidden bg-white">
   <div class="flex w-full overflow-auto text-center scrollbar-hidden justify-evenly gap-x-4 max-w-7xl">
     {flags.map(flag => (
-      <span class="w-20">
-        <Image src={flag.src} alt={flag.alt} class="w-full h-full object-cover aspect-square" />
+      <span class="w-60">
+        <Image src={flag.src} alt={flag.alt} class="w-full h-full object-cover" />
       </span>
     ))}
   </div>
