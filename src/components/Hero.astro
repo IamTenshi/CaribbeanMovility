@@ -1,10 +1,13 @@
+---
+import video from '/public/videos/home.mp4';
+import videoWebm from '/public/videos/home.webm';
+---
+
 <article id="hero" class="flex relative items-center p-8 h-[calc(100vh-4.25rem)]">
   <div class="absolute inset-0 object-cover w-full h-full -z-10">
-    <video playsinline autoplay muted loop preload="none" class="object-cover w-full h-full">
-      <!-- TODO: remplazar url's de videos -->
-      <source src="https://vehiculoselectricos.com.do/home.webm" type='video/webm'>
-      <source src="https://vehiculoselectricos.com.do/home.mp4" type='video/mp4'>
-      <source src="https://vehiculoselectricos.com.do/home.ogv" type='video/ogg'>
+    <video playsinline autoplay muted loop preload="auto" class="object-cover w-full h-full">
+      <source src={video} type='video/mp4'>
+      <source src={videoWebm} type='video/webm'>
     </video>
   </div>
   <div class="flex justify-center w-full">
