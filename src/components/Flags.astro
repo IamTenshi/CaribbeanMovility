@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+
+import dominicanFlag from '../../public/images/flags/dominican-flag.png';
+import colombianFlag from '../../public/images/flags/colombian-flag.png';
+import mexicanFlag from '../../public/images/flags/mexican-flag.png';
+import argentineanFlag from '../../public/images/flags/argentinean-flag.png';
+
+interface Flag {
+  src: ImageMetadata,
+  alt: string
+}
+
+const flags: Flag[] = [
+  {
+    src: dominicanFlag,
+    alt: 'Bandera dominicana'
+  },
+  {
+    src: colombianFlag,
+    alt: 'Bandera colombiana'
+  },
+  {
+    src: mexicanFlag,
+    alt: 'Bandera mexicana'
+  },
+  {
+    src: argentineanFlag,
+    alt: 'Bandera argentina'
+  }
+]
+---
+
+<div class="flex justify-center p-4 overflow-hidden bg-white">
+  <div class="flex w-full overflow-auto text-center scrollbar-hidden justify-evenly gap-x-4 max-w-7xl">
+    {flags.map(flag => (
+      <span class="w-20">
+        <Image src={flag.src} alt={flag.alt} class="w-full h-full object-cover aspect-square" />
+      </span>
+    ))}
+  </div>
+</div>
