@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-interface CharlistProps {
+export interface CharlistProps {
   image: ImageMetadata;
   name: string;
   title: string;
@@ -11,7 +11,7 @@ interface CharlistProps {
 const { image, name, title, description } = Astro.props as CharlistProps;
 ---
 
-<li class="flex flex-col carousel-item bg-black/25 rounded-xl w-80">
+<li class="flex flex-col w-full carousel-item bg-black/25 rounded-xl sm:w-80 max-w-80">
   <div>
     <Image src={image} alt="Image" class="w-full h-full rounded-t-xl aspect-[16/20]" />
   </div>
@@ -28,7 +28,7 @@ const { image, name, title, description } = Astro.props as CharlistProps;
         <p class="py-4">{description}</p>
         <div class="modal-action">
           <form method="dialog">
-            <button class="btn">Cerrar</button>
+            <button class="text-white bg-gray-600 btn hover:bg-bright-sky-blue">Cerrar</button>
           </form>
         </div>
       </div>
