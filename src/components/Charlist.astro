@@ -11,7 +11,7 @@ export interface CharlistProps {
 const { image, name, title, description } = Astro.props as CharlistProps;
 ---
 
-<li class="flex flex-col w-full carousel-item bg-black/25 rounded-xl sm:w-80 max-w-80">
+<li class="flex flex-col w-full carousel-item bg-black/25 backdrop-blur-sm rounded-xl sm:w-80 max-w-80">
   <div>
     <Image src={image} alt="Image" class="w-full h-full rounded-t-xl aspect-[16/20]" />
   </div>
